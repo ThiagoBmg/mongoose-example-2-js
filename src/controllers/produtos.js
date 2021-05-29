@@ -12,7 +12,7 @@ module.exports = {
     async update(req,res){
         let body = req.body || undefined;
         if(!body) return res.status(400).send({x:'parametros incorretos'});
-        await produtos.findOne(body).then(value=>res.status(200).send(value));
+        await produtos.updateOne({nome:body.nome}, {marca: body.marca}).then(value=>res.status(200).send(value));
     },
 
     async insert(req,res){
