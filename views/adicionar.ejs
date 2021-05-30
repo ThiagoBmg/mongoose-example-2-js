@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/teste.css">
+    <title>Loja Informatica</title>
+</head>
+<body>
+        <nav id="nav">
+            <div id="navsideA">
+                <img  id="navsideAimg" src="./src/bee2.png" alt="">
+                <h1>BeeTec <span>Shop</span></h1>
+            </div>
+            <div id="navsideB">
+                <a href="/#">HOME</a>
+                <a href="/adicionar">ADICIONAR</a>
+                <a href="/buscar">BUSCAR</a>
+            </div>
+        </nav>
+        <section id="home">
+            <div id="adicionar_form">
+                <form method="get" action="/insert_produtos"  enctype="application/x-www-form-urlencoded">
+                    <label for="">Nome</label>
+                    <input name="nome" type="text" required>
+                    <label for="">Marca</label>
+                    <input name="marca" type="text" required>
+                    <label for="">Quantidade</label>
+                    <input name="quantidade" type="number" required >
+                    <input type="submit" name="bt" id="">
+                </form>
+            </div>
+        </section>
+</body>
+</html>

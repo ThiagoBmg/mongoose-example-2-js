@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/teste.css">
+    <title>Loja Informatica</title>
+</head>
+<body>
+        <nav id="nav">
+            <div id="navsideA">
+                <img  id="navsideAimg" src="./src/bee2.png" alt="">
+                <h1>BeeTec <span>Shop</span></h1>
+            </div>
+            <div id="navsideB">
+                <a href="/#">HOME</a>
+                <a href="/adicionar">ADICIONAR</a>
+                <a href="/buscar">BUSCAR</a>
+            </div>
+        </nav>
+        <section id="home">
+            <div id="listContext">
+                <div id="row">
+                    <form action="/find_produtos" method="GET">
+                        <input id="find_input" name="nome" type="text" placeholder="BUSQUE PELO NOME PRODUTO" required>
+                        <input type="submit" value="PESQUISAR">
+                    </form>
+                </div>
+                <% var data = s_produto || false; %>
+                <% console.log(data) %>
+                <% if(data.nome){%>
+                    <form action="/update_produtos">
+                        <input type="text" name="_id" value=<%= data._id %>>
+                        <input type="text" name="nome" value=<%= data.nome %>>
+                        <input type="text" name="marca" value=<%= data.marca %>>
+                        <input type="text" name="quantidade" value=<%= data.quantidade %>>
+                        <input type="submit" value="atualizar">    
+                    </form>
+                    <form action="/delete_produtos" method="GET">
+                        <input type="text" name="_id"  hidden value=<%= data._id %> >
+                        <input type="text" name="nome" hidden value=<%= data.nome %>>
+                        <input type="text" name="marca" hidden value=<%= data.marca %>>
+                        <input type="text" name="quantidade" hidden value=<%= data.quantidade %>>
+                        <input type="submit" value="remover">
+                    </form>
+                <%}%>
+            </div>
+        </section>
+</body>
+</html>

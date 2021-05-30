@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/teste.css">
+    <title>Loja Informatica</title>
+</head>
+<body>
+        <nav id="nav">
+            <div id="navsideA">
+                <img  id="navsideAimg" src="./src/bee2.png" alt="">
+                <h1>BeeTec <span>Shop</span></h1>
+            </div>
+            <div id="navsideB">
+                <a href="/#">HOME</a>
+                <a href="/adicionar">ADICIONAR</a>
+                <a href="/buscar">BUSCAR</a>
+            </div>
+        </nav>
+        <section id="home">
+            <div id="cardA">
+                <h1 id="cardATitleA">PRODUTO DESTAQUE</h1>
+                <img src="./src/produtos/fone1.png" alt="">
+                <h2 id="cardATextA"> Fone Super Master</h2>
+            </div>
+            <div id="cardB">
+
+                <%for(var x =0; x< produtos.length; x++){%>
+                    <div id="cardBsubCard">
+                        <img src="./src/produtos/fone1.png" alt="">
+                        <div id="prod_detalhes">
+                            <span id="nome_prod"><%= produtos[x].nome %></span>
+                            <span id="marca_prod">MARCA: <%= produtos[x].marca %></span>
+                            <span id="quantidade_prod">QUANTIDADE: <%= produtos[x].quantidade %></span>
+                        </div>
+                    </div>
+                <%}%>
+            </div>
+        </section>
+</body>
+</html>
